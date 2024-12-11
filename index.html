@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instant Print : HOME</title>
+    <!-- Feather Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons"></script>
+    <!-- data aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- css aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- My Style css -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .carousel-container {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-left: 28rem;
+            box-shadow: none;
+            background: none;
+        }
+        
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .carousel-item {
+            min-width: 100%;
+            height: 30vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: none;
+            background: none;
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: none;
+            background: none;
+        }
+        
+        .carousel-item:nth-child(odd) {
+            background: #6c757d;
+        }
+        
+        @media (max-width: 768px) {
+            .carousel-container {
+                position: relative;
+                width: 90%;
+                max-width: 600px;
+                margin-bottom: -120px;
+                overflow: hidden;
+                border-radius: 10px;
+                margin-left: 2.5rem;
+                box-shadow: none;
+                background: none;
+            }
+            .carousel-item {
+                min-width: 100%;
+                height: 30vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 24px;
+                font-weight: bold;
+                box-shadow: none;
+                background: none;
+            }
+        }
+        
+        @media (max-width: 450px) {
+            .carousel-container {
+                position: relative;
+                width: 90%;
+                max-width: 600px;
+                overflow: hidden;
+                border-radius: 10px;
+                margin-bottom: -160px;
+                margin-left: 2rem;
+                box-shadow: none;
+                background: none;
+            }
+            .carousel-item {
+                min-width: 100%;
+                height: 35vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-size: 24px;
+                font-weight: bold;
+                box-shadow: none;
+                background: none;
+            }
+            .carousel-item {
+                width: 100%;
+                max-height: 35vw;
+                object-fit: contain;
+                box-shadow: none;
+                background: none;
+            }
+        }
+        
+        .review-section {
+            display: flex;
+            align-items: center;
+            /* Sejajarkan elemen secara vertikal */
+            justify-content: center;
+            /* Pusatkan elemen secara horizontal */
+            gap: 10px;
+            /* Jarak antar elemen */
+            text-align: center;
+            margin-bottom: -30px;
+        }
+        
+        .review-section p .review-text,
+        strong {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: black;
+        }
+        
+        .review-text .rating {
+            color: green;
+            /* Warna hijau untuk "Excellent" */
+        }
+        
+        .trustpilot-logo {
+            width: 120px;
+            /* Ukuran logo */
+            height: auto;
+        }
+        /* Responsif untuk perangkat kecil */
+        
+        @media (max-width: 768px) {
+            .review-section {
+                /* Susun vertikal pada layar kecil */
+                gap: 5px;
+                /* Kurangi jarak antar elemen */
+            }
+            .review-text {
+                font-size: 1.2rem;
+            }
+            .trustpilot-logo {
+                width: 100px;
+                /* Ukuran logo lebih kecil */
+            }
+        }
+        
+        .animasi {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2vw;
+            margin-bottom: 10%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        
+        .logo {
+            width: 220vw;
+            max-width: 200px;
+            height: auto;
+            opacity: 0;
+            transform: translateY(100px);
+            animation: logoAnimation 0.9s ease-out forwards;
+        }
+        
+        .text {
+            display: flex;
+            font-size: 3vw;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 0.3vw;
+            justify-content: center;
+            gap: 0.1vw;
+            opacity: 0;
+            transform: translateY(100px);
+            animation: textAnimation 0.9s ease-out forwards;
+            animation-delay: 0.1s;
+            /* Memberi delay sedikit pada teks agar animasi lebih menarik */
+        }
+        
+        .text span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(100px);
+            animation: animateText 0.5s ease-out forwards;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+        }
+        
+        .text span:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+        
+        .text span:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        
+        .text span:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+        
+        .text span:nth-child(4) {
+            animation-delay: 0.5s;
+        }
+        
+        .text span:nth-child(5) {
+            animation-delay: 0.6s;
+        }
+        
+        .text span:nth-child(6) {
+            animation-delay: 0.7s;
+        }
+        /* Keyframes untuk animasi logo */
+        
+        @keyframes logoAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Keyframes untuk animasi teks */
+        
+        @keyframes textAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Keyframes untuk animasi setiap karakter teks */
+        
+        @keyframes animateText {
+            0% {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Media query untuk layar kecil */
+        
+        @media (max-width: 768px) {
+            .logo {
+                width: 30vw;
+            }
+            .text {
+                font-size: 8vw;
+                letter-spacing: 0.2vw;
+            }
+            .animasi {
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                width: 220vw;
+            }
+            .text {
+                font-size: 7vw;
+            }
+            .animasi {
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+        }
+        
+        #opening {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+        }
+        
+        #contenttt {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="opening">
+        <div class="animasi">
+            <img class="logo" src="logobulat-removebg-preview.png" alt="Logo">
+            <div class="text">
+                <span style="color: black;">I</span>
+                <span style="color: black;">N</span>
+                <span style="color: black;">S</span>
+                <span style="color: black;">T</span>
+                <span style="color: black;">A</span>
+                <span style="color: #1777c5;">N</span>
+                <span style="color: #1777c5;">T</span>
+                <span style="color: black;">P</span>
+                <span style="color: black;">R</span>
+                <span style="color: black;">I</span>
+                <span style="color: #1777c5;">N</span>
+                <span style="color: #1777c5;">T</span>
+                <span style="color: #1777c5;">J</span>
+                <span style="color: #1777c5;">K</span>
+                <span style="color: #1777c5;">T</span>
+            </div>
+        </div>
+    </div>
+    <div id="contenttt">
+        <!-- Navbar start-->
+        <nav class="navbar">
+            <a href="#" class="navbar-logo"><img src="logokotak-removebg-preview.png" alt="" class="logoimg"></a>
+            <div class="navbar-nav">
+                <a href="#index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="kontak.html">Contact Us</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="search-container">
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Emoney,card wallet,flazz..." required>
+                    <button type="submit" class="search-button"><a href="#" id="search"><i data-feather="search" id="icon" ></i></a></button>
+                </form>
+            </div>
+            <div class="navbar-extra">
+                <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+            </div>
+        </nav>
+
+        <!-- Navbar End -->
+
+
+        <!-- hero section start -->
+        <section class="hero" id=home>
+            <main class="content">
+
+                <div data-aos="fade-right" data-aos-duration="700">
+                    <h1>Express Digital Printing dengan Mesin<span> Mimaki UJF 3042</span></h1>
+                    <p>Customize E-Tolls Card, Dompet Kartu, Gelas mug, Gantungan kunci, Akrilik, Power bank, Flashdisk, Lanyard</p>
+                    <a href="#services" class="cta">lihat Sekarang</a>
+
+                </div>
+
+            </main>
+        </section>
+
+        <div class="circle">
+        </div>
+        <div class="circles">
+        </div>
+        <div class="marquee-container">
+            <div class="marquee">
+                <span>Jam Operasional: Senin - Sabtu 10:00 - 20:00 WIB </span>
+                <span>Jam Operasional: Senin - Sabtu 10:00 - 20:00 WIB </span>
+                <span>Jam Operasional: Senin - Sabtu 10:00 - 20:00 WIB </span>
+                <span>Jam Operasional: Senin - Sabtu 10:00 - 20:00 WIB </span>
+                <span>Jam Operasional: Senin - Sabtu 10:00 - 20:00 WIB </span>
+                <span>Jam Operasional: Senin - Sabtu 10:00 - 20:00 WIB </span>
+                <span>Jam Operasional: Senin - Sabtu 10:00 - 20:00 WIB </span>
+                <span>Jam Operasional: Senin - Sabtu 10:00 - 20:00 WIB </span>
+                <span>Jam Operasional: Senin - Sabtu 10:00 - 20:00 WIB </span>
+
+            </div>
+        </div>
+        <div class="custom-slideshow-container" id="slider">
+            <!-- Slide Items -->
+            <div class="custom-slide custom-fade">
+                <img src="sd1.jpg" alt="Slide 1">
+            </div>
+            <div class="custom-slide custom-fade">
+                <img src="sd2.jpg" alt="Slide 2">
+            </div>
+            <div class="custom-slide custom-fade">
+                <img src="sd3.jpg" alt="Slide 3">
+            </div>
+            <div class="custom-slide custom-fade">
+                <img src="sd4.jpg" alt="Slide 4">
+            </div>
+            <div class="custom-slide custom-fade">
+                <img src="sd5.jpg" alt="Slide 5">
+            </div>
+            <div class="custom-slide custom-fade">
+                <img src="sd6.jpg" alt="Slide 6">
+            </div>
+            <div class="custom-slide custom-fade">
+                <img src="sd7.jpg" alt="Slide 7">
+            </div>
+            <div class="custom-slide custom-fade">
+                <img src="sd8.jpg" alt="Slide 8">
+            </div>
+
+            <!-- Prev and Next Buttons -->
+            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+            <button class="next" onclick="plusSlides(1)">&#10095;</button>
+        </div>
+
+        <!-- Dots Navigation -->
+        <div class="custom-dots-container">
+            <span class="custom-dot" onclick="setSlideFromDot(0)"></span>
+            <span class="custom-dot" onclick="setSlideFromDot(1)"></span>
+            <span class="custom-dot" onclick="setSlideFromDot(2)"></span>
+            <span class="custom-dot" onclick="setSlideFromDot(3)"></span>
+            <span class="custom-dot" onclick="setSlideFromDot(4)"></span>
+            <span class="custom-dot" onclick="setSlideFromDot(5)"></span>
+            <span class="custom-dot" onclick="setSlideFromDot(6)"></span>
+            <span class="custom-dot" onclick="setSlideFromDot(7)"></span>
+        </div>
+
+        <!-- hero section end -->
+        <div class="review-section">
+            <p class="review-text" style="color: black; font-size: 1.8rem;">
+                Reviews <strong>534,416RB+</strong> • <span class="rating">Excellent</span>
+            </p>
+            <img src="star.png" alt="Trustpilot Logo" class="trustpilot-logo" />
+        </div>
+        <!-- service start -->
+        <section id="services" class="services">
+            <h1 style="font-size: 2em;">Kenapa Harus Memilih Instant Print ?</h1>
+
+            <div class="services-container">
+                <div class="service-item">
+                    <i class="icon"><img src="famous.png" class="cctv"></i>
+                    <h3>Langganan Para Artis</h3>
+                    <p>Kualitas premium yang telah dipercaya oleh banyak artis, memastikan hasil terbaik yang akan memuaskan setiap kebutuhan Anda.</p>
+                </div>
+                <div class="service-item">
+                    <i class="icon"><img src="quality-control.png" class="cctv"></i>
+                    <h3>Menggunakan Print UV</h3>
+                    <p>Menggunakan teknologi print UV terbaru, kami memastikan hasil cetakan yang tajam, tahan lama, dan berkualitas tinggi untuk setiap produk.</p>
+                </div>
+                <div class="service-item">
+                    <i class="icon"><img src="protect.png" class="cctv"></i>
+                    <h3>Anti Luntur</h3>
+                    <p>Dibuat dengan bahan yang tahan lama dan anti luntur, produk kami tetap terlihat sempurna meskipun terpapar cuaca atau waktu.</p>
+                </div>
+                <div class="service-item">
+                    <i class="icon"><img src="shield.png" class="cctv"></i>
+                    <h3>Height Premium Quality</h3>
+                    <p>Kualitas premium yang memberikan hasil produk terbaik, karena kepuasan Anda adalah prioritas kami.</p>
+                </div>
+                <div class="service-item">
+                    <i class="icon"><img src="hd.png" class="cctv"></i>
+                    <h3>HD RESULT</h3>
+                    <p>Detail sempurna dalam setiap cetakan, hasil yang nyata dan tajam</p>
+                </div>
+                <div class="service-item">
+                    <i class="icon"><img src="stopwatch.png" class="cctv"></i>
+                    <h3>Express Printing</h3>
+                    <p>Cepat, tepat, dan berkualitas—kami mencetak lebih cepat dari ekspektasi Anda.</p>
+                </div>
+                <div class="service-item">
+                    <i class="icon"><img src="customer-service.png" class="cctv"></i>
+                    <h3>Best Service</h3>
+                    <p>Layanan terbaik untuk setiap kebutuhan Anda, karena kami peduli pada pelanggan.</p>
+                </div>
+                <div class="service-item">
+                    <i class="icon"><img src="check-mark.png" class="cctv"></i>
+                    <h3>Trusted</h3>
+                    <p>Dipercaya oleh pelanggan untuk kualitas dan layanan terbaik sejak awal.</p>
+                </div>
+                <div class="service-item">
+                    <i class="icon"><img src="customer-review.png" class="cctv"></i>
+                    <h3>Testimoni</h3>
+                    <p>Kisah nyata dari pelanggan kami yang puas menjadi bukti nyata kepercayaan Anda.</p>
+                </div>
+            </div>
+        </section>
+        <!-- service end -->
+        <!-- cscard start -->
+        <section id="custom-cards" class="custom-cards">
+            <h1 style="font-size: 1.5em;">Customize Your Card, Dompet Kartu, Gelas mug, Gantungan kunci, Akrilik, Power bank, Flashdisk, Lanyard </h1>
+            <p>Buat kartu E-money, Flazz, Brizzi, Tap-Cash dengan desain pilihanmu!</p>
+            <div class="card-container">
+                <div class="card">
+                    <img src="emoneyy-removebg-preview.png" alt="E-Money Card" class="card-image">
+                    <div class="card-info">
+                        <h3>Customize E-money</h3>
+                        <p>Kartu e-money dengan desain pilihanmu.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="flazz.jpg" alt="E-Money Card" class="card-image">
+                    <div class="card-info">
+                        <h3>Customize Flazz</h3>
+                        <p>Kartu Flazz dengan desain pilihanmu.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="logobrizi1.png" alt="E-Money Card" class="card-image">
+                    <div class="card-info">
+                        <h3>Customize Brizzi</h3>
+                        <p>Kartu Brizzi dengan desain pilihanmu</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="Logo TapCash.png" alt="E-Money Card" class="card-image">
+                    <div class="card-info">
+                        <h3>Customize Tap-Cash</h3>
+                        <p>Kartu Tap-Cash dengan desain pilihanmu</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item sd1"><img src="slide1.jpg" alt=""></div>
+                <div class="carousel-item sd2"><img src="slide2.jpg" alt=""></div>
+                <div class="carousel-item sd3"><img src="slide3.jpg" alt=""></div>
+                <div class="carousel-item sd4"><img src="slide5.jpg" alt=""></div>
+                <div class="carousel-item sd5"><img src="slide66.jpg" alt=""></div>
+                <div class="carousel-item sd6"><img src="slide6.jpg" alt=""></div>
+            </div>
+
+        </div>
+
+
+        <section class="order-platforms" style="background-color: white;">
+            <h2 style="font-size: 2em;">Pesan melalui Marketplace Kami</h2>
+            <div class="platform">
+                <a href="https://id.shp.ee/3BZiWKF" target="_blank" img>
+                    <img src="shopee-logo-0.png" alt="Shopee Logo" class="platform-logo">
+                </a>
+            </div>
+            <div class="platform">
+                <a href="https://tokopedia.link/instantprintjkt" target="_blank" class="emg">
+                    <img src="tokped.jpg" alt="Tokopedia Logo" class="platform-logos">
+                </a>
+            </div>
+        </section>
+
+        <!-- cscard end -->
+        <div class="house-container" id="card-container">
+            <!-- Card 1 -->
+            <div class="house-card" data-title="emoney, Emoney, E-money, brizzi, brizi, flaz, flazz, tapcash, tap cash, tap-cash">
+                <img src="sdd1new.jpg" alt="Rumah 1">
+                <div class="house-info">
+                    <h3>Customize Your Design</h3>
+                    <a href="https://id.shp.ee/3BZiWKF" class="bttn">Open With Shopee</a>
+                    <a href="https://tokopedia.link/instantprintjkt" class="btt">Open With Tokopedia</a>
+                </div>
+            </div>
+            <div class="house-card" data-title="emoney, Emoney, E-money, brizzi, brizi, flaz, flazz, tapcash, tap cash, tap-cash">
+                <img src="sdd1.jpg" alt="Rumah 1">
+                <div class="house-info">
+                    <h3>Customize Your Design</h3>
+                    <a href="https://id.shp.ee/3BZiWKF" class="bttn">Open With Shopee</a>
+                    <a href="https://tokopedia.link/instantprintjkt" class="btt">Open With Tokopedia</a>
+                </div>
+            </div>
+            <div class="house-card" data-title="emoney, Emoney, E-money, brizzi, brizi, flaz, flazz, tapcash, tap cash, tap-cash">
+                <img src="sdd2.jpg" alt="Rumah 1">
+                <div class="house-info">
+                    <h3>Customize Your Design</h3>
+                    <a href="https://id.shp.ee/3BZiWKF" class="bttn">Open With Shopee</a>
+                    <a href="https://tokopedia.link/instantprintjkt" class="btt">Open With Tokopedia</a>
+                </div>
+            </div>
+            <div class="house-card" data-title="emoney, Emoney, E-money, brizzi, brizi, flaz, flazz, tapcash, tap cash, tap-cash">
+                <img src="sdd3.jpg" alt="Rumah 1">
+                <div class="house-info">
+                    <h3>Customize Your Design</h3>
+                    <a href="https://id.shp.ee/3BZiWKF" class="bttn">Open With Shopee</a>
+                    <a href="https://tokopedia.link/instantprintjkt" class="btt">Open With Tokopedia</a>
+                </div>
+            </div>
+            <div class="house-card" data-title="emoney, Emoney, E-money, brizzi, brizi, flaz, flazz, tapcash, tap cash, tap-cash">
+                <img src="sdd4.jpg" alt="Rumah 1">
+                <div class="house-info">
+                    <h3>Customize Your Design</h3>
+                    <a href="https://id.shp.ee/3BZiWKF" class="bttn">Open With Shopee</a>
+                    <a href="https://tokopedia.link/instantprintjkt" class="btt">Open With Tokopedia</a>
+                </div>
+            </div>
+            <div class="house-card" data-title="emoney, Emoney, E-money, brizzi, brizi, flaz, flazz, tapcash, tap cash, tap-cash">
+                <img src="sdd5.jpg" alt="Rumah 1">
+                <div class="house-info">
+                    <h3>Customize Your Design</h3>
+                    <a href="https://id.shp.ee/3BZiWKF" class="bttn">Open With Shopee</a>
+                    <a href="https://tokopedia.link/instantprintjkt" class="btt">Open With Tokopedia</a>
+                </div>
+            </div>
+            <div class="house-card" data-title="emoney, Emoney, E-money, brizzi, brizi, flaz, flazz, tapcash, tap cash, tap-cash">
+                <img src="sdd6.jpg" alt="Rumah 1">
+                <div class="house-info">
+                    <h3>Customize Your Design</h3>
+                    <a href="https://id.shp.ee/3BZiWKF" class="bttn">Open With Shopee</a>
+                    <a href="https://tokopedia.link/instantprintjkt" class="btt">Open With Tokopedia</a>
+                </div>
+            </div>
+            <div class="house-card" data-title="emoney, Emoney, E-money, brizzi, brizi, flaz, flazz, tapcash, tap cash, tap-cash">
+                <img src="sdd7.jpg" alt="Rumah 1">
+                <div class="house-info">
+                    <h3>Customize Your Design</h3>
+                    <a href="https://id.shp.ee/3BZiWKF" class="bttn">Open With Shopee</a>
+                    <a href="https://tokopedia.link/instantprintjkt" class="btt">Open With Tokopedia</a>
+                </div>
+            </div>
+            <div class="house-card" data-title="dompet kartu, dompet, kartu, card wallet, card-wallet">
+                <img src="sdd8.jpg" alt="Rumah 1">
+                <div class="house-info">
+                    <h3>Customize Your Design</h3>
+                    <a href="https://id.shp.ee/3BZiWKF" class="bttn">Open With Shopee</a>
+                    <a href="https://tokopedia.link/instantprintjkt" class="btt">Open With Tokopedia</a>
+                </div>
+            </div>
+            <div class="house-card" data-title="emoney, Emoney, E-money, brizzi, brizi, flaz, flazz, tapcash, tap cash, tap-cash">
+                <img src="sdd9.jpg" alt="Rumah 1">
+                <div class="house-info">
+                    <h3>Customize Your Design</h3>
+                    <a href="https://id.shp.ee/3BZiWKF" class="bttn">Open With Shopee</a>
+                    <a href="https://tokopedia.link/instantprintjkt" class="btt">Open With Tokopedia</a>
+                </div>
+            </div>
+            <div class="house-card" data-title="emoney, Emoney, E-money, brizzi, brizi, flaz, flazz, tapcash, tap cash, tap-cash">
+                <img src="sdd10.jpg" alt="Rumah 1">
+                <div class="house-info">
+                    <h3>Customize Your Design</h3>
+                    <a href="https://id.shp.ee/3BZiWKF" class="bttn">Open With Shopee</a>
+                    <a href="https://tokopedia.link/instantprintjkt" class="btt">Open With Tokopedia</a>
+                </div>
+            </div>
+            <div class="house-card" data-title="emoney, Emoney, E-money, brizzi, brizi, flaz, flazz, tapcash, tap cash, tap-cash">
+                <img src="sdd11.jpg" alt="Rumah 1">
+                <div class="house-info">
+                    <h3>Customize Your Design</h3>
+                    <a href="https://id.shp.ee/3BZiWKF" class="bttn">Open With Shopee</a>
+                    <a href="https://tokopedia.link/instantprintjkt" class="btt">Open With Tokopedia</a>
+                </div>
+            </div>
+            <div class="house-card" data-title="emoney, Emoney, E-money, brizzi, brizi, flaz, flazz, tapcash, tap cash, tap-cash">
+                <img src="sdd12.jpg" alt="Rumah 1">
+                <div class="house-info">
+                    <h3>Customize Your Design</h3>
+                    <a href="https://id.shp.ee/3BZiWKF" class="bttn">Open With Shopee</a>
+                    <a href="https://tokopedia.link/instantprintjkt" class="btt">Open With Tokopedia</a>
+                </div>
+            </div>
+            <div class="house-card" data-title="emoney, Emoney, E-money, brizzi, brizi, flaz, flazz, tapcash, tap cash, tap-cash">
+                <img src="sdd13.jpg" alt="Rumah 1">
+                <div class="house-info">
+                    <h3>Customize Your Design</h3>
+                    <a href="https://id.shp.ee/3BZiWKF" class="bttn">Open With Shopee</a>
+                    <a href="https://tokopedia.link/instantprintjkt" class="btt">Open With Tokopedia</a>
+                </div>
+            </div>
+            <div class="house-card" data-title="emoney, Emoney, E-money, brizzi, brizi, flaz, flazz, tapcash, tap cash, tap-cash">
+                <img src="sdd14.jpg" alt="Rumah 1">
+                <div class="house-info">
+                    <h3>Customize Your Design</h3>
+                    <a href="https://id.shp.ee/3BZiWKF" class="bttn">Open With Shopee</a>
+                    <a href="https://tokopedia.link/instantprintjkt" class="btt">Open With Tokopedia</a>
+                </div>
+            </div>
+            <div class="house-card" data-title="emoney, Emoney, E-money, brizzi, brizi, flaz, flazz, tapcash, tap cash, tap-cash">
+                <img src="sdd15.jpg" alt="Rumah 1">
+                <div class="house-info">
+                    <h3>Customize Your Design</h3>
+                    <a href="https://id.shp.ee/3BZiWKF" class="bttn">Open With Shopee</a>
+                    <a href="https://tokopedia.link/instantprintjkt" class="btt">Open With Tokopedia</a>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <button id="back-to-top" style="display: none; position: fixed; bottom: 20px; left: 20px; padding: 10px 15px; background-color: #007acc; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;">↑</button>
+
+        <!-- footer start -->
+        <div class="get-in-touch">
+
+            <!-- Google Maps Iframe -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1982.3122145461674!2d106.88388641987097!3d-6.281474726060681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef9f539d5a5f%3A0x57c8bfe689576ac9!2sJl.%20Batu%20Kecubung%2C%20Batu%20Ampar%2C%20Kecamatan%20Kramat%2C%20Jakarta%20Timur%2C%20DKI%20Jakarta!5e0!3m2!1sen!2sid!4v1607420623585!5m2!1sen!2sid"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" style="margin-bottom: 20px;"></iframe>
+            </div>
+            <footer class="footer">
+                <div class="footer-section">
+                    <img src="logokotak-removebg-preview.png" alt="">
+                    <h4>Information</h4>
+                    <p><a href="#">Terpercaya Sejak 2021</a></p>
+
+                </div>
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>Berdiri sejak 2021, Instaprint telah dipercaya oleh lebih dari 500Rb+ pelanggan puas untuk kebutuhan cetak berkualitas tinggi. Kami terus berkomitmen memberikan layanan terbaik untuk Anda.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>About Our Whole</h4>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="faq.html">FAQS</a></p>
+                    <p><a href="kontak.html">Contact Us</a></p>
+                </div>
+
+
+            </footer>
+            <p>Instant Print adalah solusi cetak modern yang menghadirkan hasil berkualitas tinggi dengan layanan yang cepat, mudah, dan terpercaya. Dengan teknologi terbaru dan tim profesional, kami berkomitmen untuk memberikan pengalaman cetak terbaik
+                bagi setiap pelanggan.</p>
+            <hr>
+            <div class="icon-email">
+                <p>
+                    <div class="address">
+                        <span class="icon">📍</span>
+                        <p>Jl. batu kecubung, batu ampar condet, jakarta timur</p>
+                    </div>
+                </p>
+            </div>
+            <h4>KUNJUNGI KAMI</h4>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/instantprintjkt?igsh=MTEzYmc3cGl3Y2c4ZQ==" target="_blank" id="instagram">
+                    <img src="instagram-40.png" alt="">
+                </a>
+                <a href="https://id.shp.ee/3BZiWKF" target="_blank" id="youtube">
+                    <img src="shopee-logo-1.png" alt="">
+                </a>
+                <a href="https://tokopedia.link/instantprintjkt" target="_blank" id="facebook">
+                    <img src="tokopedia-logo-icon-tokopedia-115638033660bhcr3nbcq-removebg-preview.png" alt="">
+                </a>
+            </div>
+            <h3 style="color:white;">&copy; 2024 ALL RIGHT RESERVED</h3>
+        </div>
+        <!-- footer end -->
+
+
+
+
+
+        <!-- logo wa -->
+        <a href="https://wa.me/6285810735864" class="whatsapp-float" target="_blank" title="Hubungi kami di WhatsApp">
+            <img src="iconwa.png" alt="WhatsApp Icon">
+        </a>
+    </div>
+    <!-- Feather Icons -->
+
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- My JS -->
+    <script src="script.js" defer></script>
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const items = document.querySelectorAll('.carousel-item');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % items.length;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            updateCarousel();
+        }
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoSlide();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoSlide();
+        });
+
+        // Auto-slide
+        let autoSlide = setInterval(nextSlide, 3000);
+
+        function resetAutoSlide() {
+            clearInterval(autoSlide);
+            autoSlide = setInterval(nextSlide, 3000);
+        }
+        // opening
+        document.addEventListener('DOMContentLoaded', () => {
+            const textSpans = document.querySelectorAll('.text span');
+
+            // Add delay for remaining text
+            textSpans.forEach((span, index) => {
+                if (index >= 5) {
+                    span.style.setProperty('--delay', index - 5);
+                }
+            });
+
+            // Trigger additional effects after animation
+            setTimeout(() => {
+                textSpans.forEach((span, index) => {
+                    span.style.transition = `all 0.2s ease-in-out ${index * 0.1}s`;
+                    span.style.letterSpacing = '0.2rem';
+                    span.style.filter = 'drop-shadow(0 0 10px )';
+                });
+            }, 900);
+        });
+        window.onload = function() {
+            const opening = document.getElementById('opening');
+            const content = document.getElementById('contenttt');
+
+            setTimeout(() => {
+                opening.style.display = 'none'; // Sembunyikan opening
+                content.style.display = 'block'; // Tampilkan konten utama
+                document.body.style.overflow = 'auto'; // Kembalikan scroll
+            }, 2600); // 2 detik
+        };
+    </script>
+
+    <!-- data aos js -->
+    <script>
+        feather.replace();
+    </script>
+
+</body>
+
+</html>

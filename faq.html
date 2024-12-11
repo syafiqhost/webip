@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
+    <!-- Feather Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons"></script>
+    <!-- data aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- css aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 8rem;
+        }
+        
+        .faq-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-item h3 {
+            cursor: pointer;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin: 0;
+            border-radius: 3px;
+            font-size: 1.6em;
+        }
+        
+        .faq-item p {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-top: none;
+            margin: 0;
+            background-color: #fff;
+            border-radius: 0 0 3px 3px;
+            font-size: 1.7em;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const faqItems = document.querySelectorAll(".faq-item h3");
+            faqItems.forEach(item => {
+                item.addEventListener("click", function() {
+                    const answer = this.nextElementSibling;
+                    answer.style.display = answer.style.display === "block" ? "none" : "block";
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Navbar start-->
+    <nav class="navbar">
+        <a href="#" class="navbar-logo"><img src="logokotak-removebg-preview.png" alt="" class="logoimg"></a>
+        <div class="navbar-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="kontak.html">Contact Us</a>
+            <a href="kontak.html">FAQ</a>
+        </div>
+
+        <div class="navbar-extra">
+            <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+        </div>
+    </nav>
+
+    <!-- Navbar End -->
+    <div class="faq-container">
+        <h1 style="color: black;">FAQ Instant Print.jkt</h1>
+        <div class="faq-item">
+            <h3 style="color: black;">Apa saja layanan yang ditawarkan oleh Instan Print.jkt?</h3>
+            <p style="color: #333">Instan Print menyediakan layanan cetak berkualitas tinggi, layanan pengiriman langsung, serta produk custom yang dirancang untuk kebutuhan bisnis maupun individu.</p>
+        </div>
+        <div class="faq-item">
+            <h3 style="color: black;">Apakah Instan Print.jkt menyediakan layanan desain custom?</h3>
+            <p style="color: #333">Ya, kami menyediakan layanan desain custom untuk memenuhi kebutuhan spesifik Anda. Hubungi kami untuk informasi lebih lanjut.
+
+            </p>
+        </div>
+        <div class="faq-item">
+            <h3 style="color: black;">Apakah saya bisa mencetak desain saya sendiri?</h3>
+            <p style="color: #333">Tentu saja, kami akan mencetaknya sesuai spesifikasi yang Anda inginkan.</p>
+        </div>
+        <div class="faq-item">
+            <h3 style="color: black;">Bagaimana cara menghubungi layanan pelanggan?</h3>
+            <p style="color: #333">Anda dapat menghubungi layanan pelanggan melalui WhatsApp kami yang ada di situs web kami.</p>
+        </div>
+        <div class="faq-item">
+            <h3 style="color: black;">Apakah Instan Print menyediakan pengiriman ke seluruh Indonesia?</h3>
+            <p style="color: #333"> Ya, kami melayani pengiriman ke seluruh Indonesia.</p>
+        </div>
+
+    </div>
+
+    <!-- footer start -->
+    <div class="get-in-touch">
+
+        <!-- Google Maps Iframe -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1982.3122145461674!2d106.88388641987097!3d-6.281474726060681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef9f539d5a5f%3A0x57c8bfe689576ac9!2sJl.%20Batu%20Kecubung%2C%20Batu%20Ampar%2C%20Kecamatan%20Kramat%2C%20Jakarta%20Timur%2C%20DKI%20Jakarta!5e0!3m2!1sen!2sid!4v1607420623585!5m2!1sen!2sid"
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" style="margin-bottom: 20px;"></iframe>
+        </div>
+        <footer class="footer">
+            <div class="footer-section">
+                <img src="logokotak-removebg-preview.png" alt="">
+                <h4>Information</h4>
+                <p><a href="#">Terpercaya Sejak 2021</a></p>
+
+            </div>
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Berdiri sejak 2021, Instaprint telah dipercaya oleh lebih dari 500Rb+ pelanggan puas untuk kebutuhan cetak berkualitas tinggi. Kami terus berkomitmen memberikan layanan terbaik untuk Anda.</p>
+            </div>
+            <div class="footer-section">
+                <h4>about our whole</h4>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="faq.html">FAQS</a></p>
+                <p><a href="kontak.html">Contact Us</a></p>
+            </div>
+
+
+        </footer>
+        <p>Instant Print adalah solusi cetak modern yang menghadirkan hasil berkualitas tinggi dengan layanan yang cepat, mudah, dan terpercaya. Dengan teknologi terbaru dan tim profesional, kami berkomitmen untuk memberikan pengalaman cetak terbaik bagi
+            setiap pelanggan.</p>
+        <hr>
+        <div class="icon-email">
+            <p>
+                <div class="address">
+                    <span class="icon">📍</span>
+                    <p>Jl. batu kecubung, batu ampar condet, jakarta timur</p>
+                </div>
+            </p>
+        </div>
+        <h4>KUNJUNGI KAMI</h4>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/instantprintjkt?igsh=MTEzYmc3cGl3Y2c4ZQ==" target="_blank" id="instagram">
+                <img src="instagram-40.png" alt="">
+            </a>
+            <a href="https://id.shp.ee/3BZiWKF" target="_blank" id="youtube">
+                <img src="shopee-logo-1.png" alt="">
+            </a>
+            <a href="https://tokopedia.link/instantprintjkt" target="_blank" id="facebook">
+                <img src="tokopedia-logo-icon-tokopedia-115638033660bhcr3nbcq-removebg-preview.png" alt="">
+            </a>
+        </div>
+        <h3 style="color:white;">&copy; 2024 ALL RIGHT RESERVED</h3>
+    </div>
+    <!-- footer end -->
+
+    <a href="https://wa.me/6285810735864" class="whatsapp-float" target="_blank" title="Hubungi kami di WhatsApp">
+        <img src="iconwa.png" alt="WhatsApp Icon">
+    </a>
+
+
+    <script src="script.js" defer></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>

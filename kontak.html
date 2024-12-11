@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- Feather Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons"></script>
+    <!-- data aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+         :root {
+            --bg: white;
+            --text-dark: #333;
+            --white: #fff;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+        
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            min-height: 100vh;
+            background-color: white;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            margin: 50px 0;
+            color: var(--primary);
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        
+        .contact-form,
+        .map-container {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px var(--shadow);
+            flex: 1;
+            min-width: 45%;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .contact-form button {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form button:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 380px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            animation: bounce 2s infinite;
+        }
+        
+        .whatsapp-float img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        /* Enhanced list styling */
+        
+        .list {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        .list-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .list-items li {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #555555;
+            text-align: left;
+        }
+        
+        .list-items li strong {
+            color: var(--text-dark);
+            font-weight: bold;
+        }
+        
+        .list-items a {
+            color: #FF69B4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .list-items a:hover {
+            color: #D64590;
+            text-decoration: underline;
+        }
+        
+        .social-icons a {
+            margin: 10px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+        /* Footer styling */
+        
+        .get-in-touch {
+            text-align: center;
+            padding: 50px;
+            color: var(--white);
+        }
+        
+        .get-in-touch p {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar start-->
+    <nav class="navbar">
+        <a href="#" class="navbar-logo"><img src="logokotak-removebg-preview.png" alt="" class="logoimg"></a>
+        <div class="navbar-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="kontak.html">Contact Us</a>
+            <a href="faq.html">FAQ</a>
+        </div>
+        <div class="navbar-extra">
+            <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+        </div>
+    </nav>
+
+    <h2 style="margin-top: 10rem; color: black;">Kontak Kami</h2>
+
+    <div class="contact-container">
+        <!-- Google Maps -->
+        <div class="map-container" data-aos="fade-up">
+            <h3>Lokasi Kami</h3>
+            <!-- Embed Google Maps iframe -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d521.7962488323593!2d106.85735810170851!3d-6.274584235225912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f36fbef5c721%3A0x82d7a550b6881b25!2sInstant%20Print%20Jakarta!5e0!3m2!1sen!2sid!4v1733550289542!5m2!1sen!2sid"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <!-- Contact Information Section -->
+        <section class="list" data-aos="fade-up">
+            <h2 style="color: black;">Hubungi Kami</h2>
+            <ul class="list-items">
+                <li><strong>Instagram:</strong> <a href="https://www.instagram.com/instantprintjkt?igsh=MTEzYmc3cGl3Y2c4ZQ==" target="_blank">instantprint.jkt</a></li>
+                <li><strong>Shopee:</strong> <a href="https://id.shp.ee/3BZiWKF" target="_blank">instantprint.jkt</a></li>
+                <li><strong>Toko Pedia:</strong> <a href="https://tokopedia.link/instantprintjkt" target="_blank">instantprint.jkt</a></li>
+                <li><strong>Telepon:</strong> +62 8581 1073 35864</li>
+                <li><strong>Alamat:</strong> Jl. Batu kecubung 1 No. 110, Jakarta Timur</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- WhatsApp floating button -->
+    <a href="https://wa.me/6285810735864" class="whatsapp-float" target="_blank" title="Hubungi kami di WhatsApp">
+        <img src="iconwa.png" alt="WhatsApp Icon">
+    </a>
+
+    <!-- footer start -->
+    <div class="get-in-touch">
+
+        <!-- Google Maps Iframe -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1982.3122145461674!2d106.88388641987097!3d-6.281474726060681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef9f539d5a5f%3A0x57c8bfe689576ac9!2sJl.%20Batu%20Kecubung%2C%20Batu%20Ampar%2C%20Kecamatan%20Kramat%2C%20Jakarta%20Timur%2C%20DKI%20Jakarta!5e0!3m2!1sen!2sid!4v1607420623585!5m2!1sen!2sid"
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" style="margin-bottom: 20px;"></iframe>
+        </div>
+        <footer class="footer">
+            <div class="footer-section">
+                <img src="logokotak-removebg-preview.png" alt="">
+                <h4>Information</h4>
+                <p><a href="#">Terpercaya Sejak 2021</a></p>
+
+            </div>
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Berdiri sejak 2021, Instaprint telah dipercaya oleh lebih dari 500Rb+ pelanggan puas untuk kebutuhan cetak berkualitas tinggi. Kami terus berkomitmen memberikan layanan terbaik untuk Anda.</p>
+            </div>
+            <div class="footer-section">
+                <h4>about our whole</h4>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="faq.html">FAQS</a></p>
+                <p><a href="kontak.html">Contact Us</a></p>
+            </div>
+
+
+        </footer>
+        <p>Instant Print adalah solusi cetak modern yang menghadirkan hasil berkualitas tinggi dengan layanan yang cepat, mudah, dan terpercaya. Dengan teknologi terbaru dan tim profesional, kami berkomitmen untuk memberikan pengalaman cetak terbaik bagi
+            setiap pelanggan.</p>
+        <hr>
+        <div class="icon-email">
+            <p>
+                <div class="address">
+                    <span class="icon">📍</span>
+                    <p>Jl. batu kecubung, batu ampar condet, jakarta timur</p>
+                </div>
+            </p>
+        </div>
+        <h4>KUNJUNGI KAMI</h4>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/instantprintjkt?igsh=MTEzYmc3cGl3Y2c4ZQ==" target="_blank" id="instagram">
+                <img src="instagram-40.png" alt="">
+            </a>
+            <a href="https://id.shp.ee/3BZiWKF" target="_blank" id="youtube">
+                <img src="shopee-logo-1.png" alt="">
+            </a>
+            <a href="https://tokopedia.link/instantprintjkt" target="_blank" id="facebook">
+                <img src="tokopedia-logo-icon-tokopedia-115638033660bhcr3nbcq-removebg-preview.png" alt="">
+            </a>
+        </div>
+        <h3 style="color:white;">&copy; 2024 ALL RIGHT RESERVED</h3>
+    </div>
+    <!-- footer end -->
+
+    <script src="script.js" defer></script>
+    <!-- Feather Icons -->
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>
